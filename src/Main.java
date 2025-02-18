@@ -49,7 +49,7 @@ public class Main {
      String[] name = new name[100]
      String[] phone_no = new phone_no[100]
 
-             public void Contacts(){
+             public static Contacts(){
 
          string namei =Scanner.nextline();
          String passi =Scanner.nextline();
@@ -60,7 +60,7 @@ public class Main {
 
 
 
-     public void getContacts(String namei,String passi) {
+     public static getContacts(String namei,String passi) {
          String namei = new name();
          String pass = new pass();
          for (int i = 0; i < 3; i++) { // Outer loop for users
@@ -80,7 +80,7 @@ public class Main {
          }
      }
 
-     public void displayUserContacts(String username) {
+     public static displayUserContacts(String username) {
              boolean found = false;
 
              for (int i = 0; i < 3; i++) {
