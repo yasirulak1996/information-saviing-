@@ -6,23 +6,32 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner Scanner=new Scanner(System.in);
+        String account;
 
-        username = scaner.line();
-        passwordd=scanner.line()
+        System.out.println("do you have account (yes or no)");
+        account = Scanner.line();
+        if(account.equals("yes")){
+            username = scaner.line();
+            passwordd=scanner.line();
 
 
         login_usr()
-        if(isfound){
-
-        contact.getcontact();
-        contact.displaycontact();
+        if(isfound) {
 
 
+            contact.displaycontact();
+
+            else system.out.println("incorrect username or password")
+        } else if (acoount.equals("no")) {
+            system.out.println("please create acoount")
+            contact.getcontact();
+            else system.out .println("please enter yes or no")
+
+        }
 
 
-
-
-    }
+        }
 }
 
 
@@ -40,13 +49,24 @@ public class Main {
      String[] name = new name[100]
      String[] phone_no = new phone_no[100]
 
+             public void Contacts(){
+
+         string namei =Scanner.nextline();
+         String passi =Scanner.nextline();
 
 
-     public void getContacts() {
+
+             }
+
+
+
+     public void getContacts(String namei,String passi) {
+         String namei = new name();
+         String pass = new pass();
          for (int i = 0; i < 3; i++) { // Outer loop for users
              System.out.print("\nEnter username for User " + (i + 1) + ": ");
-             user_name[i] = scanner.nextLine();  // Store username
-             password[i] = scanner.nextLine();
+             user_name[i] = namei;  // Store username
+             password[i] = pass;
 
 
 
