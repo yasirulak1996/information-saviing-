@@ -20,19 +20,24 @@ public class Main {
 
                 boolean isLoggedIn = loginSystem.login(user1, pass1);
                 if (isLoggedIn) {
-                   while (true){
-                    System.out.println("do you want enter new contact or see contacts ");
-                    String a = scanner.nextLine().toLowerCase();
-                    if (a.equals("yes")){
-                        System.out.println("enter contact name");
-                    String contact = scanner.nextLine();
-                        System.out.println("enter contact number");
-                    String connum = scanner.nextLine();
-                    loginSystem.contactsv(user1,connum,contact);}
-                    else {
-                        loginSystem.getConnumber(user1);
-                  }
+                    while (true) {
+                        System.out.println("Do you want to enter a new contact (yes), see contacts (no), or exit?");
+                        String a = scanner.nextLine().toLowerCase();
 
+                        if (a.equals("yes")) {
+                            System.out.println("Enter contact name:");
+                            String contact = scanner.nextLine();
+                            System.out.println("Enter contact number:");
+                            String connum = scanner.nextLine();
+                            loginSystem.contactsv(user1, connum, contact);
+                        } else if (a.equals("no")) {
+                            loginSystem.getConnumber(user1);
+                        } else if (a.equals("exit")) {
+                            System.out.println("Exiting program...");
+                            break;
+                        } else {
+                            System.out.println("Invalid option. Please enter 'yes', 'no', or 'exit'.");
+                        }
                     }
                 } else {
                     System.out.println("Incorrect login credentials.");
@@ -49,7 +54,7 @@ public class Main {
                 System.out.println("Account created successfully!");
             } else if (account.equalsIgnoreCase("exit")) {
                 System.out.println("Exiting program...");
-                break; // Exit the loop
+                break;
             } else {
                 System.out.println("Invalid input. Please enter 'yes', 'no', or 'exit'.");
             }
