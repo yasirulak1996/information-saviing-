@@ -20,7 +20,20 @@ public class Main {
 
                 boolean isLoggedIn = loginSystem.login(user1, pass1);
                 if (isLoggedIn) {
-                    System.out.println("Successfully logged in!");
+                   while (true){
+                    System.out.println("do you want enter new contact or see contacts ");
+                    String a = scanner.nextLine().toLowerCase();
+                    if (a.equals("yes")){
+                        System.out.println("enter contact name");
+                    String contact = scanner.nextLine();
+                        System.out.println("enter contact number");
+                    String connum = scanner.nextLine();
+                    loginSystem.contactsv(user1,connum,contact);}
+                    else {
+                        loginSystem.getConnumber(user1);
+                  }
+
+                    }
                 } else {
                     System.out.println("Incorrect login credentials.");
                 }

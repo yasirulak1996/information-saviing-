@@ -5,6 +5,7 @@ public class Login {
     String[] pass = new String[100];
     String[] contactname = new String[100];
     String[] connumber = new String[100];
+    String[] user = new String[100];
 
     public void sign_up(String name, String password) {
         if (name.isEmpty() || password.isEmpty()) {
@@ -32,45 +33,35 @@ public class Login {
         }
         return false;
     }
-    public String  contactsv(String user1 , String contact , String connum){
-        for (int i = 1; i < 100; i++) {
-            if (username[i] != null) {
-                username[i] = user1;
-                for (int j = 1; j < 100; j++){
-                    contactname[j] = contact;
-                    connumber[j] = connum;
-                    break;
-
-
-
-
-                }
-
+    public void contactsv(String user1, String contact, String connum) {
+        for (int i = 0; i < 100; i++) {
+            if (username[i] != null && username[i].equals(user1)) { // Find the user
+                for (int j = 0; j < 100; j++) { // Find an empty slot
+                    if (contactname[j] == null) {
+                        user[j] = user1;
+                        contactname[j] = contact;
+                        connumber[j] = connum;
+                        System.out.println("Contact saved successfully!");
+                        return;
+                    }
                 }
             }
-
-
-
-
-
-
-
+        }
+        System.out.println("User not found or contact list is full.");
     }
 
-    public String getConnumber(String user1){
-    
-          for (int i = 0; i < 100; i++){
-
-        
-            if ( username[i] = user1 ) {
-                for (int j = 1; j < 100; j++) {
-                    System.out.println(contactname[j] + connumber[j]);
-                }
-
-
-
-
-                    
-    }     } }   
+    public void getConnumber(String user1) {
+        boolean found = false;
+        System.out.println("Contacts for " + user1 + ":");
+        for (int j = 0; j < 100; j++) {
+            if (user[j] != null && user[j].equals(user1)) {
+                found = true;
+                System.out.println(contactname[j] + " - " + connumber[j]);
+            }
+        }
+        if (!found) {
+            System.out.println("No contacts found for this user.");
+        }
+    }
 }
 
